@@ -6,12 +6,15 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
 </p>
 
-OpenSim models social communication through interaction volume, activation-local
-states, and language-model-generated comments and shares. Rather than maintaining
-a persistent psychological trajectory for every account, it carries information
-forward through collective state and communication history. The implementation
-combines a causal volume forecaster, a state-transition model, a future-constrained
-LLM policy, and a mean-field summarizer.
+OpenSim is a communication-centered framework for social simulation in
+open-population systems, where participation is sparse and changes over time.
+Persistent account identities do not provide continuously observable individual
+states. OpenSim therefore shifts the simulation target from presumed psychological
+trajectories to the observable evolution of social communication: who participates,
+what they communicate, and how these communications shape subsequent dynamics.
+Given a system-visible history and declared environmental inputs, it recursively
+generates and updates the platform process, without requiring an LLM to stand in
+for a human mind.
 
 ![OpenSim framework: communication volume, state transition, future-compatible generation, and history feedback](assets/opensim-overview.png)
 
@@ -20,15 +23,19 @@ the runnable defaults of this release are described below.*
 
 ## Highlights
 
-- **Communication-centered simulation.** Model participation and generated
-  comment/share events while retaining collective communication history.
-- **State-guided generation.** Condition the policy on latent states and select
-  candidate responses using predicted future-trajectory compatibility.
-- **Closed-loop feedback.** Feed simulated interaction counts, predicted attitude
-  distributions, and generated summaries into subsequent simulation steps.
-- **Training and evaluation workflow.** Provide staged training, policy validation,
-  resumable simulation, teacher-forced NLL, semantic annotation, and micro/macro
-  evaluation in one codebase.
+- **From persistent agents to communication processes.** Make observable
+  communication history—not unobserved individual psychological trajectories—the
+  recursive object of simulation, in conceptual alignment with social systems theory.
+- **Endogenous participation in an open population.** Realize participants from a
+  global user pool and generate their actions and content without access to the
+  realized future participant sequence.
+- **An explicit system–environment boundary.** Simulate endogenous communication
+  dynamics conditional on declared environmental inputs, rather than asking the
+  model to invent external events or reconstruct the single future that occurred.
+- **Future-constrained communication learning.** Connect locally plausible
+  communicative acts with subsequent collective dynamics. Future trajectories
+  provide training supervision only; inference generates and selects communications
+  using information available at simulation time.
 
 ## Project Structure
 
@@ -206,21 +213,6 @@ destination override.
 continue to use `data/test/macro`. `--evaluation-macro-dir` selects the corresponding
 evaluation targets. For scale10, explicitly use `scale_factor: 10` and matching
 scaled inputs; the default configuration remains full scale1.
-
-## Implementation Notes
-
-State distributions use `[positive, neutral, negative]`. Missing future targets
-are masked, and response-token and trajectory losses are logged separately.
-Candidate selection combines predicted trajectory agreement, uncertainty, and
-output-quality penalties.
-
-The summarizer is instructed to agree with predicted cumulative state proportions,
-not observed ground truth. Its text cleanup can discard predominantly English or
-formula-like lines and subsequent text; this heuristic is not a learned component.
-
-The dataset plots retain source-time gaps. Day 0 is a display-only zero anchor,
-not a dataset observation or evaluation input. Single-seed results do not establish
-statistical significance.
 
 ## License
 
