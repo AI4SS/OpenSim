@@ -8,19 +8,11 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
 </p>
 
-OpenSim is a communication-centered framework for social simulation in
-open-population systems, where participation is sparse and changes over time.
-Persistent account identities do not provide continuously observable individual
-states. OpenSim therefore shifts the simulation target from presumed psychological
-trajectories to the observable evolution of social communication: who participates,
-what they communicate, and how these communications shape subsequent dynamics.
-Given a system-visible history and declared environmental inputs, it recursively
-generates and updates the platform process, without requiring an LLM to stand in
-for a human mind.
+> **Abstract:** Large language models (LLMs) have enabled social simulation with persistent agents, where fixed computational individuals maintain internal states and interact over time. However, large-scale social networks are inherently **open-population**: the participating population changes over time, users enter and leave dynamically, and only a sparse subset becomes observable through communication at any given time. In such systems, persistent account identities do not provide continuously observable individual-state trajectories, making recursively maintained psychological states insufficiently grounded in empirical observations. We therefore shift the simulation target from persistent individual trajectories to the observable evolution of social communication, modeling who participates, what they communicate, and how these communications shape subsequent system dynamics. We instantiate this formulation with participant activation from a global user pool, collective state transition, and an LLM policy for communication generation, while explicitly separating environmental inputs from endogenous system evolution. Across five Qwen backbones, our framework reduces average KL divergence by **71.2%** over Direct LLM and **35.0%** over MF-LLM, with boundary and counterfactual experiments further validating the proposed modeling boundaries. Our results support communication-centered simulation as a principled formulation for long-horizon open-population social systems.
 
 ![OpenSim framework: communication volume, state transition, future-compatible generation, and history feedback](assets/opensim-overview.png)
 
-## Highlights
+## ✨ Highlights
 
 - **From persistent agents to communication processes.** Make observable
   communication history—not unobserved individual psychological trajectories—the
@@ -36,7 +28,11 @@ for a human mind.
   provide training supervision only; inference generates and selects communications
   using information available at simulation time.
 
-## Project Structure
+## 🗓️ Timeline
+
+- **[2026-10-15]** Released the code and dataset.
+
+## 📂 Project Structure
 
 ```text
 OpenSim-Release/
@@ -64,7 +60,7 @@ OpenSim-Release/
 └── tests/                      # Focused regression tests
 ```
 
-## Usage
+## 🧪 Usage
 
 ### 1. Environment and Data
 
@@ -139,6 +135,6 @@ checkpoints/
 
 For simulation, also supply `--validation-gate` and the matching `--base-model`.
 
-## License
+## 📜 License
 
 [MIT](LICENSE)
