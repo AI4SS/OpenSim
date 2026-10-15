@@ -1,4 +1,4 @@
-<h3 align="center">OpenSim</h3>
+<h1 align="center">OpenSim</h1>
 
 <p align="center"><strong>Rethinking Social Simulation in Open-Population Systems:<br>From Persistent Agents to Communication Processes</strong></p>
 
