@@ -1,9 +1,11 @@
-<h1 align="center">OpenSim</h1>
-
-<h2 align="center">
-  Rethinking Social Simulation in Open-Population Systems:<br>
-  From Persistent Agents to Communication Processes
-</h2>
+<div align="center">
+  <big><big><strong>OpenSim</strong></big></big>
+  <br><br>
+  <big><big><strong>
+    Rethinking Social Simulation in Open-Population Systems:<br>
+    From Persistent Agents to Communication Processes
+  </strong></big></big>
+</div>
 
 <p align="center">
   <a href="https://github.com/AI4SS/OpenSim"><img src="https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github" alt="GitHub"></a>
