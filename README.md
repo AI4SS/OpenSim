@@ -1,5 +1,5 @@
 <h2 align="center">
-  <strong>OpenSim</strong>:<br>Rethinking Social Simulation in Open-Population Systems:<br>
+  <strong>OpenSim</strong><br>Rethinking Social Simulation in Open-Population Systems:<br>
     From Persistent Agents to Communication Processes
 </h2>
 
