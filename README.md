@@ -1,6 +1,6 @@
-<h1 align="center">OpenSim</h1>
-<h2 align="center">Rethinking Social Simulation in Open-Population Systems:<br>From Persistent Agents to Communication Processes</h3>
 <p align="center">
+  <h1 align="center">OpenSim</h1>
+  <h2 align="center">Rethinking Social Simulation in Open-Population Systems:<br>From Persistent Agents to Communication Processes</h3>
   <a href="https://github.com/AI4SS/OpenSim"><img src="https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github" alt="GitHub"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
