@@ -1,6 +1,6 @@
-<h1 align="center">OpenSim</h1>
+<h3 align="center">OpenSim</h3>
 
-<h3 align="center">Rethinking Social Simulation in Open-Population Systems:<br>From Persistent Agents to Communication Processes</h3>
+<p align="center"><strong>Rethinking Social Simulation in Open-Population Systems:<br>From Persistent Agents to Communication Processes</strong></p>
 
 <p align="center">
   <a href="https://github.com/AI4SS/OpenSim"><img src="https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github" alt="GitHub"></a>
@@ -210,11 +210,6 @@ Supply the corresponding passed gate with `--validation-gate` for simulation and
 the matching base model with `--base-model`. Keep these options unchanged in
 subsequent evaluation/resume commands. `--checkpoint-root` is not a training
 destination override.
-
-`--simulation-micro-dir` can select a scaled reference pool while state features
-continue to use `data/test/macro`. `--evaluation-macro-dir` selects the corresponding
-evaluation targets. For scale10, explicitly use `scale_factor: 10` and matching
-scaled inputs; the default configuration remains full scale1.
 
 ## License
 
