@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenSim — Rethinking Social Simulation in Open-Population Systems: From Persistent Agents to Communication Processes</title>
+  <meta name="description" content="OpenSim models open-population social systems through observable communication processes, endogenous participation, and future-constrained communication learning.">
+  <meta name="theme-color" content="#286b63">
+  <link rel="canonical" href="https://ai4ss.github.io/OpenSim/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="OpenSim">
+  <meta property="og:title" content="Rethinking Social Simulation in Open-Population Systems: From Persistent Agents to Communication Processes">
+  <meta property="og:description" content="From persistent agents to communication processes in open-population social systems.">
+  <meta property="og:url" content="https://ai4ss.github.io/OpenSim/">
+  <meta property="og:image" content="https://ai4ss.github.io/OpenSim/assets/overview.png">
+  <meta property="og:image:alt" content="OpenSim participation, communication generation, and observable-history feedback framework.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenSim: From Persistent Agents to Communication Processes">
+  <meta name="twitter:description" content="Communication-centered simulation in open-population social systems.">
+  <meta name="twitter:image" content="https://ai4ss.github.io/OpenSim/assets/overview.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/site.css?v=20261015">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <nav class="section-nav" aria-label="Page sections">
+      <a class="masthead-brand" href="#main">OpenSim</a>
+      <div class="nav-links"><a href="#video">Video</a><a href="#abstract">Abstract</a><a href="#highlights">Highlights</a><a href="#method">Method</a><a href="#results">Results</a><a href="#usage">Usage</a></div>
+    </nav>
+    <main id="main">
+      <header class="hero">
+        <p class="brand">OpenSim</p>
+        <p class="hero-eyebrow">Open populations · Observable communication</p>
+        <h1><span>Rethinking <em>Social Simulation</em></span> <span>in <em>Open-Population Systems</em>:</span> <span class="title-tail">From Persistent Agents to Communication Processes</span></h1>
+        <p class="subtitle">Who participates, what they communicate, and how communication shapes the social process.</p>
+        <ul class="authors" aria-label="Authors">
+          <li><a href="https://openreview.net/profile?id=~Yunyao_Zhang1">Yunyao Zhang</a><sup>1</sup></li>
+          <li><a href="https://openreview.net/profile?id=~Yihao_Ai1">Yihao Ai</a><sup>2</sup></li>
+          <li><a href="https://openreview.net/profile?id=~Boqi_Xu1">Boqi Xu</a><sup>1</sup></li>
+          <li><a href="https://openreview.net/profile?id=~Zuocheng_Ying1">Zuocheng Ying</a><sup>1</sup></li>
+          <li><a href="https://openreview.net/profile?id=~Junqing_Yu1">Junqing Yu</a><sup>1</sup></li>
+          <li><a href="https://openreview.net/profile?id=~Zikai_Song1">Zikai Song</a><sup>1</sup></li>
+        </ul>
+        <div class="affiliations">
+          <p><sup>1</sup> Huazhong University of Science and Technology, Wuhan, China</p>
+          <p><sup>2</sup> National University of Singapore, Singapore</p>
+        </div>
+        <div class="resource-links" aria-label="Project resources">
+          <a class="resource-link primary" href="assets/OpenSim.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6zM14 3v5h4M9 12h6M9 16h6"/></svg>Paper</a>
+          <a class="resource-link" href="https://github.com/AI4SS/OpenSim"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5M14 4l-4 16"/></svg>Code</a>
+          <a class="resource-link" href="#video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 11 7-11 7z"/></svg>Video</a>
+          <a class="resource-link" href="#citation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5H6v14h3M15 5h3v14h-3M10 9h4M10 15h4"/></svg>BibTeX</a>
+        </div>
+      </header>
+
+      <section class="video-section" id="video" aria-labelledby="video-heading">
+        <h2 class="sr-only" id="video-heading">OpenSim project video</h2>
+        <figure class="project-film">
+          <div class="figure-label"><span>A communication-centered perspective</span><span>Project video / 01:34</span></div>
+          <video controls playsinline preload="metadata" poster="assets/video-poster.jpg" width="1920" height="1080" aria-label="OpenSim concept demonstration with illustrative examples" aria-describedby="video-caption">
+            <source src="assets/opensim-observatory.mp4" type="video/mp4">
+            <p>Your browser does not support embedded video. <a href="assets/opensim-observatory.mp4">Download the MP4 video</a>.</p>
+          </video>
+          <figcaption id="video-caption"><strong>A 94-second concept demonstration.</strong> The users, posts, values, and trajectories shown are illustrative examples, not experimental results. <a href="assets/opensim-observatory.mp4" download>Download video (MP4) ↗</a></figcaption>
+        </figure>
+      </section>
+
+      <figure class="paper-figure overview" id="overview">
+        <div class="figure-label"><span>Framework overview</span><span>Participation → Communication → History</span></div>
+        <a class="figure-link" href="assets/overview.pdf" aria-label="Open the full-resolution OpenSim overview PDF"><img src="assets/overview.png" width="2400" height="1063" alt="OpenSim forecasts communication volume, activates participants, infers activation-local states, generates and selects communication, and updates the observable platform history." loading="lazy" decoding="async"></a>
+        <figcaption><strong>Overview of OpenSim.</strong> OpenSim recursively models participation, mean-field state transition, and future-constrained communication generation, with realized communication updating the collective state and platform history for subsequent steps. <a href="assets/overview.pdf">Full-resolution figure ↗</a></figcaption>
+      </figure>
+
+      <section class="text-section" id="abstract" aria-labelledby="abstract-heading">
+        <div class="section-heading"><p class="section-kicker">01 / Research context</p><h2 id="abstract-heading">Abstract</h2></div>
+        <div class="abstract-copy">
+          <p>Large language models (LLMs) have enabled social simulation with persistent agents, where fixed computational individuals maintain internal states and interact over time.</p>
+          <p>However, large-scale social networks are inherently <strong>open-population</strong>: the participating population changes over time, users enter and leave dynamically, and only a sparse subset becomes observable through communication at any given time. In such systems, persistent account identities do not provide continuously observable individual-state trajectories, making recursively maintained psychological states insufficiently grounded in empirical observations.</p>
+          <p>We therefore shift the simulation target from persistent individual trajectories to the observable evolution of social communication, modeling who participates, what they communicate, and how these communications shape subsequent system dynamics. We instantiate this formulation with participant activation from a global user pool, collective state transition, and an LLM policy for communication generation, while explicitly separating environmental inputs from endogenous system evolution.</p>
+          <p>Across five Qwen backbones, our framework reduces average KL divergence by <strong>71.2%</strong> over Direct LLM and <strong>35.0%</strong> over MF-LLM, with boundary and counterfactual experiments further validating the proposed modeling boundaries. Our results support communication-centered simulation as a principled formulation for long-horizon open-population social systems.</p>
+        </div>
+      </section>
+
+      <section class="text-section" id="highlights" aria-labelledby="highlights-heading">
+        <div class="section-heading"><p class="section-kicker">02 / Contributions</p><h2 id="highlights-heading">Highlights</h2></div>
+        <p class="section-intro">A shift in what the simulator carries forward, what it predicts, and where its responsibility ends.</p>
+        <ol class="contribution-list">
+          <li><h3>Communication carries continuity</h3><p>Observable communication history carries the recursive process. Participants realize communicative events without requiring the simulator to recover their unobserved psychological trajectories.</p></li>
+          <li><h3>Participation is endogenous</h3><p>The framework models participation and communication conditional on declared environmental inputs, separating the platform process from external events it is not tasked with inventing.</p></li>
+          <li><h3>Learn from future dynamics</h3><p>Future-constrained learning connects plausible communication with later collective evolution. Generation and selection use available context and model predictions, without the realized future participant sequence.</p></li>
+        </ol>
+      </section>
+
+      <section class="text-section method-section" id="method" aria-labelledby="method-heading">
+        <div class="section-heading"><p class="section-kicker">03 / Inside the framework</p><h2 id="method-heading">Method</h2></div>
+        <dl class="method-caption-list">
+          <div><dt>Open-population participation</dt><dd>Given prior platform history and declared environmental inputs, OpenSim forecasts communication volume and activates participants from a candidate pool. Participation is step-specific: users may enter, leave, and reappear, while history carries continuity. The manuscript distinguishes event-specific and external participant pools.</dd></div>
+          <div><dt>Collective state and communication</dt><dd>A state-transition model predicts attitude composition and activation-local representations. A policy uses these predictions, participant features, and history to generate actions and content. Selected communications update the realized mean field and textual synopsis. Latent representations are not maintained through inactive periods.</dd></div>
+          <div><dt>Future-constrained learning</dt><dd>A response-sensitive critic learns from communication supervision, trajectory discrepancy, and matched versus masked or mismatched responses. During simulation, candidates are ranked against model-predicted future trajectories. Observed future distributions provide training supervision only.</dd></div>
+        </dl>
+      </section>
+
+      <section class="text-section results-section" id="results" aria-labelledby="results-heading">
+        <div class="section-heading"><p class="section-kicker">04 / Experimental evidence</p><h2 id="results-heading">Results</h2></div>
+        <p class="section-intro">Main comparisons, component ablations, and counterfactual interventions reported in the manuscript.</p>
+        <div class="results-block" id="main-results">
+          <h3>Main experiments</h3>
+          <p class="results-description">Across five backbones, the event-specific-pool OpenSim row reduces mean KL by 71.2% relative to Direct LLM* and 35.0% relative to MF-LLM*. These percentages compare the means across backbones; they do not describe OpenSim†.</p>
+          <p class="protocol-note"><strong>Comparison conditions.</strong> * Baselines receive the observed future participant sequence. OpenSim uses an event-specific pool derived from that event’s records; OpenSim† uses an external participant pool. Event context and stepwise counts are held fixed in the pool comparison.</p>
+          <p class="table-guide">Expand a backbone to inspect all six metrics. ↓ Lower is better; ↑ higher is better. Bold marks the best value within that backbone.</p>
+          <details class="model-results" open>
+            <summary><span>Qwen2-1.5B</span><span class="summary-detail">5 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2-1.5B main results; scroll horizontally on small screens">
+              <table class="results-table" id="main-model-1">
+                <caption class="sr-only">Qwen2-1.5B — main results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr><th scope="row">Direct LLM<sup>*</sup></th><td>2.4090</td><td>0.3336</td><td>0.3055</td><td>0.3441</td><td>0.5686</td><td>4.6838</td></tr>
+                <tr><th scope="row">Social Retrieval<sup>*</sup></th><td>1.6678</td><td>0.2568</td><td>0.2063</td><td>0.3636</td><td>0.5526</td><td>5.1355</td></tr>
+                <tr><th scope="row">MF-LLM<sup>*</sup></th><td>1.2494</td><td>0.2246</td><td>0.1773</td><td>0.4311</td><td>0.6295</td><td>4.6060</td></tr>
+                <tr class="external"><th scope="row">OpenSim<sup>†</sup></th><td>2.0773</td><td>0.2905</td><td>0.2256</td><td>0.4209</td><td>0.6199</td><td><strong>4.1414</strong></td></tr>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.1352</strong></td><td><strong>0.1922</strong></td><td><strong>0.1261</strong></td><td><strong>0.4444</strong></td><td><strong>0.6616</strong></td><td>4.3377</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen2.5-1.5B</span><span class="summary-detail">5 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2.5-1.5B main results; scroll horizontally on small screens">
+              <table class="results-table" id="main-model-2">
+                <caption class="sr-only">Qwen2.5-1.5B — main results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr><th scope="row">Direct LLM<sup>*</sup></th><td>3.3485</td><td>0.2844</td><td>0.3384</td><td>0.3730</td><td>0.4651</td><td>6.3707</td></tr>
+                <tr><th scope="row">Social Retrieval<sup>*</sup></th><td>2.4112</td><td>0.2243</td><td>0.2695</td><td>0.4569</td><td>0.5566</td><td>6.2568</td></tr>
+                <tr><th scope="row">MF-LLM<sup>*</sup></th><td>1.4739</td><td>0.1941</td><td>0.1396</td><td>0.5408</td><td>0.5881</td><td>5.1429</td></tr>
+                <tr class="external"><th scope="row">OpenSim<sup>†</sup></th><td>1.5739</td><td>0.2142</td><td>0.1934</td><td>0.5001</td><td>0.6008</td><td><strong>4.4138</strong></td></tr>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.0667</strong></td><td><strong>0.1724</strong></td><td><strong>0.1252</strong></td><td><strong>0.6097</strong></td><td><strong>0.6252</strong></td><td>4.5980</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen2.5-3B</span><span class="summary-detail">5 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2.5-3B main results; scroll horizontally on small screens">
+              <table class="results-table" id="main-model-3">
+                <caption class="sr-only">Qwen2.5-3B — main results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr><th scope="row">Direct LLM<sup>*</sup></th><td>3.8755</td><td>0.3603</td><td>0.3771</td><td>0.3138</td><td>0.4561</td><td>13.9996</td></tr>
+                <tr><th scope="row">Social Retrieval<sup>*</sup></th><td>1.8466</td><td>0.2283</td><td>0.2591</td><td>0.3817</td><td>0.5129</td><td>14.0303</td></tr>
+                <tr><th scope="row">MF-LLM<sup>*</sup></th><td>1.5061</td><td>0.1546</td><td>0.2311</td><td>0.4598</td><td>0.6222</td><td>4.5446</td></tr>
+                <tr class="external"><th scope="row">OpenSim<sup>†</sup></th><td>1.5030</td><td>0.1495</td><td>0.1824</td><td>0.4652</td><td>0.6545</td><td><strong>4.4980</strong></td></tr>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.0048</strong></td><td><strong>0.1273</strong></td><td><strong>0.1369</strong></td><td><strong>0.5058</strong></td><td><strong>0.7278</strong></td><td>4.5356</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen2.5-7B</span><span class="summary-detail">5 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2.5-7B main results; scroll horizontally on small screens">
+              <table class="results-table" id="main-model-4">
+                <caption class="sr-only">Qwen2.5-7B — main results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr><th scope="row">Direct LLM<sup>*</sup></th><td>3.0914</td><td>0.3107</td><td>0.3097</td><td>0.3471</td><td>0.5581</td><td>13.0946</td></tr>
+                <tr><th scope="row">Social Retrieval<sup>*</sup></th><td>2.5142</td><td>0.2981</td><td>0.2882</td><td>0.3701</td><td>0.5821</td><td>12.8823</td></tr>
+                <tr><th scope="row">MF-LLM<sup>*</sup></th><td>1.6049</td><td>0.2234</td><td>0.2564</td><td>0.4380</td><td>0.6117</td><td><strong>4.6823</strong></td></tr>
+                <tr class="external"><th scope="row">OpenSim<sup>†</sup></th><td>1.4294</td><td>0.2289</td><td>0.2509</td><td>0.4455</td><td>0.6340</td><td>4.9849</td></tr>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>0.8509</strong></td><td><strong>0.1759</strong></td><td><strong>0.1572</strong></td><td><strong>0.4855</strong></td><td><strong>0.6752</strong></td><td>5.0921</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen3-1.7B</span><span class="summary-detail">5 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen3-1.7B main results; scroll horizontally on small screens">
+              <table class="results-table" id="main-model-5">
+                <caption class="sr-only">Qwen3-1.7B — main results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr><th scope="row">Direct LLM<sup>*</sup></th><td>5.1480</td><td>0.4279</td><td>0.4191</td><td>0.3314</td><td>0.5236</td><td>25.7470</td></tr>
+                <tr><th scope="row">Social Retrieval<sup>*</sup></th><td>4.7743</td><td>0.3453</td><td>0.2210</td><td>0.3478</td><td>0.5451</td><td>25.4819</td></tr>
+                <tr><th scope="row">MF-LLM<sup>*</sup></th><td>2.0902</td><td>0.2549</td><td>0.1715</td><td>0.5095</td><td>0.6518</td><td>6.3621</td></tr>
+                <tr class="external"><th scope="row">OpenSim<sup>†</sup></th><td>1.3115</td><td>0.2377</td><td>0.1583</td><td>0.4865</td><td>0.6825</td><td><strong>4.4081</strong></td></tr>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.0929</strong></td><td><strong>0.1780</strong></td><td><strong>0.1098</strong></td><td><strong>0.5445</strong></td><td><strong>0.7610</strong></td><td>4.4414</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <p class="table-note">All 150 main-result metric values are retained from manuscript Table 1; parenthetical improvement percentages are omitted.</p>
+        </div>
+        <figure class="paper-figure">
+          <a class="figure-link" href="assets/intervention.pdf" aria-label="Open the full-resolution communication intervention figure"><img src="assets/intervention.png" width="2400" height="505" loading="lazy" decoding="async" alt="Manuscript case study comparing communication attitude trajectories under baseline and communication intervention conditions."></a>
+          <figcaption><strong>Communication intervention dynamics.</strong> The manuscript illustrates how changes in communication reshape subsequent collective trajectories. <a href="assets/intervention.pdf">Full-resolution figure ↗</a></figcaption>
+        </figure>
+        <div class="results-block" id="ablation-results">
+          <h3>Component ablations</h3>
+          <p class="results-description">Removing state-transition supervision or the future-constrained policy objective, with participation modeling and the remaining pipeline unchanged.</p>
+          <figure class="paper-figure ablation-figure">
+            <a class="figure-link" href="assets/ablation.pdf" aria-label="Open the full-resolution component ablation figure"><img src="assets/ablation.png" width="2400" height="578" loading="lazy" decoding="async" alt="Component ablation plots comparing full OpenSim, removal of the state-transition objective, and removal of the future constraint across three backbones."></a>
+            <figcaption><strong>Component ablations across backbones.</strong> Full OpenSim improves trajectory metrics in the reported comparisons; removing future constraints can improve NLL for some backbones. <a href="assets/ablation.pdf">Full-resolution figure ↗</a></figcaption>
+          </figure>
+          <p class="table-guide">Expand a backbone for the complete ablation values. Bold marks the best value within that backbone.</p>
+          <details class="model-results" open>
+            <summary><span>Qwen2-1.5B</span><span class="summary-detail">3 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2-1.5B ablation results; scroll horizontally on small screens">
+              <table class="results-table" id="ablation-model-1">
+                <caption class="sr-only">Qwen2-1.5B — ablation results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.1352</strong></td><td><strong>0.1922</strong></td><td><strong>0.1261</strong></td><td><strong>0.4444</strong></td><td><strong>0.6616</strong></td><td><strong>4.3377</strong></td></tr>
+                <tr><th scope="row">w/o ST Objective</th><td>3.1716</td><td>0.3074</td><td>0.2644</td><td>0.4087</td><td>0.5079</td><td>4.4791</td></tr>
+                <tr><th scope="row">w/o Future Constraint</th><td>1.6934</td><td>0.2410</td><td>0.1914</td><td>0.4331</td><td>0.5597</td><td>4.4315</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen2.5-1.5B</span><span class="summary-detail">3 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen2.5-1.5B ablation results; scroll horizontally on small screens">
+              <table class="results-table" id="ablation-model-2">
+                <caption class="sr-only">Qwen2.5-1.5B — ablation results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.0667</strong></td><td><strong>0.1724</strong></td><td><strong>0.1252</strong></td><td><strong>0.6097</strong></td><td><strong>0.6252</strong></td><td>4.5980</td></tr>
+                <tr><th scope="row">w/o ST Objective</th><td>2.9886</td><td>0.2725</td><td>0.2494</td><td>0.4222</td><td>0.5299</td><td>4.4942</td></tr>
+                <tr><th scope="row">w/o Future Constraint</th><td>1.5839</td><td>0.1940</td><td>0.1864</td><td>0.5369</td><td>0.5646</td><td><strong>4.3211</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <details class="model-results">
+            <summary><span>Qwen3-1.7B</span><span class="summary-detail">3 settings · 6 metrics</span></summary>
+            <div class="results-table-wrap" tabindex="0" role="region" aria-label="Qwen3-1.7B ablation results; scroll horizontally on small screens">
+              <table class="results-table" id="ablation-model-3">
+                <caption class="sr-only">Qwen3-1.7B — ablation results reported in the manuscript</caption>
+                <thead><tr><th scope="col">Method / setting</th><th scope="col">KL ↓</th><th scope="col">Wass. ↓</th><th scope="col">DTW ↓</th><th scope="col">Macro-F1 ↑</th><th scope="col">Micro-F1 ↑</th><th scope="col">NLL ↓</th></tr></thead>
+                <tbody>
+                <tr class="ours"><th scope="row">OpenSim</th><td><strong>1.0929</strong></td><td><strong>0.1780</strong></td><td><strong>0.1098</strong></td><td><strong>0.5445</strong></td><td><strong>0.7610</strong></td><td>4.4414</td></tr>
+                <tr><th scope="row">w/o ST Objective</th><td>2.8526</td><td>0.2775</td><td>0.2412</td><td>0.4782</td><td>0.5776</td><td>4.5111</td></tr>
+                <tr><th scope="row">w/o Future Constraint</th><td>1.7857</td><td>0.2320</td><td>0.1919</td><td>0.4413</td><td>0.6587</td><td><strong>4.0974</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+          <p class="table-note">All 54 metric values are retained from the manuscript’s component-ablation table. w/o ST Objective removes state-transition supervision; w/o Future Constraint removes the future-constrained policy objective.</p>
+        </div>
+        <p class="release-note">Results are reported from the manuscript. See the <a href="https://github.com/AI4SS/OpenSim/blob/main/data/DATASET_DISCLOSURE.md">released dataset and evaluation disclosure</a> for record provenance and the reference-text matching protocol.</p>
+      </section>
+
+      <section class="text-section usage-section" id="usage" aria-labelledby="usage-heading">
+        <div class="section-heading"><p class="section-kicker">05 / Work with OpenSim</p><h2 id="usage-heading">Usage</h2></div>
+        <p>The release requires Python 3.11+, CUDA, and Git LFS. Its default backbone is <code>Qwen/Qwen3-1.7B</code>; model weights are not included.</p>
+        <pre class="usage-code" tabindex="0" aria-label="Install OpenSim and inspect the workflow"><code>git lfs install
+git clone https://github.com/AI4SS/OpenSim.git
+cd OpenSim
+git lfs pull
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install -e .
+python scripts/run.py --dry-run</code></pre>
+        <p>Training, simulation, and evaluation use the same workflow configuration. Simulation requires trained checkpoints and a passed validation gate.</p>
+        <pre class="usage-code" tabindex="0" aria-label="Train and simulate with the release default backbone"><code>python scripts/train.py --base-model Qwen/Qwen3-1.7B --output-dir outputs
+python scripts/simulate.py --base-model Qwen/Qwen3-1.7B --output-dir outputs --resume</code></pre>
+        <p class="usage-note">The released data mix original-source-derived, generated or rewritten, and unresolved-provenance records. Its micro-level evaluator samples reference records with replacement from an event-level pool; those metrics measure consistency with sampled reference texts. This differs from the manuscript’s participant-sampling protocol. See the <a href="https://github.com/AI4SS/OpenSim/blob/main/data/DATASET_DISCLOSURE.md">dataset and evaluation disclosure</a> and <a href="https://github.com/AI4SS/OpenSim#-usage">README</a> for the full setup, checkpoint requirements, and evaluation instructions.</p>
+      </section>
+
+      <section class="citation-section" id="citation" aria-labelledby="citation-heading">
+        <div class="citation-heading">
+          <div><p class="section-kicker">Reference</p><h3 id="citation-heading">Citation</h3><p>If this work is useful to your research, please cite the manuscript.</p></div>
+          <div class="citation-actions"><a href="assets/OpenSim.bib" download>Download .bib</a><button class="copy-button" type="button" id="copy-citation" hidden>Copy BibTeX</button></div>
+        </div>
+        <pre class="citation-code"><code id="citation-code">@misc{zhang2026opensim,
+  title = {Rethinking Social Simulation in Open-Population Systems: From Persistent Agents to Communication Processes},
+  author = {Yunyao Zhang and Yihao Ai and Boqi Xu and Zuocheng Ying and Junqing Yu and Zikai Song},
+  year = {2026},
+  url = {https://ai4ss.github.io/OpenSim/}
+}</code></pre>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer><a class="footer-brand" href="#main">OpenSim</a><p>Communication carries the social process forward.</p><nav aria-label="Footer resources"><a href="https://github.com/AI4SS/OpenSim">Code</a><a href="assets/OpenSim.pdf">Paper</a><a href="#citation">Citation</a></nav></footer>
+  </div>
+</body>
+</html>

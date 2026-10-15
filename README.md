@@ -4,6 +4,7 @@
 </h2>
 
 <p align="center">
+  <a href="https://ai4ss.github.io/OpenSim/"><img src="https://img.shields.io/badge/Paper%20Page-OpenSim-286b63?style=flat-square" alt="OpenSim paper page"></a>
   <a href="https://github.com/AI4SS/OpenSim"><img src="https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github" alt="GitHub"></a>
   <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
