@@ -1,0 +1,115 @@
+state:
+  agents_per_day: 128
+  k_steps: 3
+  d_model: 192
+  latent_dim: 64
+  nhead: 6
+  num_layers: 2
+  dropout: 0.2
+  feature_dropout: 0.05
+  batch_size: 4
+  epochs: 12
+  lr: 0.001
+  weight_decay: 0.0005
+  grad_clip: 1.0
+  valid_events: 8
+  seed: 42
+  text_max_length: 64
+  text_batch_size: 16
+  macro_label_smoothing: 0.03
+  future_label_smoothing: 0.05
+  weak_label_smoothing: 0.05
+  early_stop_patience: 2
+  min_epochs: 3
+  min_delta: 0.003
+  lambda_daily: 1.0
+  lambda_cumulative: 0.5
+  lambda_future_daily: 0.8
+  lambda_future_cumulative: 0.4
+  lambda_individual: 0.3
+  lambda_future_direction: 0.15
+  lambda_future_delta: 0.35
+  lambda_future_impact: 0.1
+  lambda_entropy: 0.005
+volume:
+  seed: 4925
+  exclude_event:
+    - event_response_jiangping
+policy_data:
+  agents_per_day: 128
+  k_steps: 10
+  future_target: cumulative
+  seed: 42
+  latent_clusters: 32
+  share_to_comment_ratio: 0.5
+  canonical_share_target: true
+policy:
+  max_len: 704
+  batch_size: 2
+  gradient_accumulation_steps: 16
+  warmup_ratio: 0.08
+  label_smoothing: 0.02
+  policy_format: action_content
+  action_loss_weight: 1.0
+  action_class_balance: inverse_sqrt
+  num_workers: 2
+  grad_clip: 1.0
+  seed: 42
+sft:
+  epochs: 3
+  learning_rate: 0.000008
+  weight_decay: 0.01
+  lora_rank: 32
+  lora_alpha: 32
+  lora_dropout: 0.1
+  early_stop_patience: 1
+  min_delta: 0.01
+future:
+  k_steps: 10
+  latent_dim: 64
+  critic_hidden_size: 256
+  critic_dropout: 0.2
+  mc_samples: 4
+  eval_batch_size: 2
+  warmup_epochs: 1
+  joint_epochs: 2
+  head_warmup_lr: 0.00005
+  head_joint_lr: 0.00003
+  lora_lr: 0.000003
+  lambda_future: 0.15
+  min_action_macro_f1: 0.55
+  anti_shortcut_weight: 0.5
+  anti_shortcut_margin: 0.05
+  anti_shortcut_samples: 1024
+  comment_nll_limit: 4.5
+summarizer_data:
+  summary_discussion_items: 64
+  seed: 42
+summarizer:
+  batch_size: 2
+  gradient_accumulation_steps: 16
+  epochs: 5
+  learning_rate: 0.000008
+  weight_decay: 0.01
+  warmup_ratio: 0.08
+  max_len: 1024
+  label_smoothing: 0.02
+  lora_rank: 32
+  lora_alpha: 32
+  lora_dropout: 0.1
+  num_workers: 2
+  grad_clip: 1.0
+  early_stop_patience: 1
+  min_delta: 0.005
+  seed: 42
+gate:
+  batch_size: 2
+  num_workers: 2
+  max_len: 704
+  k_steps: 10
+  mc_samples: 4
+  anti_shortcut_samples: 1024
+  comment_nll_limit: 4.5
+  min_action_macro_f1: 0.55
+  min_relative_gap: 0.05
+  promote: true

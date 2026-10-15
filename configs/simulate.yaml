@@ -1,0 +1,9 @@
+seed: 46
+batch_size: 16
+warmup: 50
+num_candidates: 4
+temperature: 0.8
+top_p: 0.9
+max_content_tokens: 48
+scale_factor: 1
+state_history_volume: simulated

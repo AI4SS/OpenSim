@@ -1,0 +1,14 @@
+semantic:
+  model: gpt-4o-mini
+  workers: 2
+  batch_workers_per_event: 1
+  batch_size: 8
+  timeout: 120
+  max_attempts: 5
+  backoff: 2
+  max_backoff: 16
+likelihood:
+  batch_size: 4
+  max_length: 1536
+metrics:
+  cad_source: native_state
