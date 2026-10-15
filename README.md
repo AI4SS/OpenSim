@@ -1,6 +1,6 @@
 <h1 align="center">OpenSim</h1>
 
-<p align="center" style="font-size: 1.5em;">
+<p align="center" style="font-size: 3em;">
   <strong>Rethinking Social Simulation in Open-Population Systems:<br>
   From Persistent Agents to Communication Processes</strong>
 </p>
