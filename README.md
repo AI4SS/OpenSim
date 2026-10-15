@@ -1,10 +1,10 @@
-# OpenSim
+<h1 align="center">OpenSim: Rethinking Social Simulation in Open-Population Systems: From Persistent Agents to Communication Processes</h1>
 
-[![GitHub](https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github)](https://github.com/AI4SS/OpenSim)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?style=flat-square&logo=python&logoColor=white)](pyproject.toml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-
-Code accompanying **Rethinking Social Simulation in Open-Population Systems: From Persistent Agents to Communication Processes**.
+<p align="center">
+  <a href="https://github.com/AI4SS/OpenSim"><img src="https://img.shields.io/badge/GitHub-OpenSim-3d7176?style=flat-square&logo=github" alt="GitHub"></a>
+  <a href="pyproject.toml"><img src="https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
+</p>
 
 OpenSim models social communication through interaction volume, activation-local
 states, and language-model-generated comments and shares. Rather than maintaining
