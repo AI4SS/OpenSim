@@ -8,17 +8,67 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
 </p>
 
+OpenSim is a communication-centered framework for social simulation in
+open-population systems, where participation is sparse and changes over time.
+Persistent account identities do not provide continuously observable individual
+states. OpenSim therefore shifts the simulation target from presumed psychological
+trajectories to the observable evolution of social communication: who participates,
+what they communicate, and how these communications shape subsequent dynamics.
+Given a system-visible history and declared environmental inputs, it recursively
+generates and updates the platform process, without requiring an LLM to stand in
+for a human mind.
 
-OpenSim shifts social simulation from persistent individual trajectories to
-observable communication processes. It models participation, collective state
-transitions, and communication generation in open populations, with an explicit
-system–environment boundary and future-constrained learning.
+![OpenSim framework: communication volume, state transition, future-compatible generation, and history feedback](assets/opensim-overview.png)
 
-![OpenSim framework](assets/opensim-overview.png)
+## Highlights
 
-## Setup
+- **From persistent agents to communication processes.** Make observable
+  communication history—not unobserved individual psychological trajectories—the
+  recursive object of simulation, in conceptual alignment with social systems theory.
+- **Endogenous participation in an open population.** Realize participants from a
+  global user pool and generate their actions and content without access to the
+  realized future participant sequence.
+- **An explicit system–environment boundary.** Simulate endogenous communication
+  dynamics conditional on declared environmental inputs, rather than asking the
+  model to invent external events or reconstruct the single future that occurred.
+- **Future-constrained communication learning.** Connect locally plausible
+  communicative acts with subsequent collective dynamics. Future trajectories
+  provide training supervision only; inference generates and selects communications
+  using information available at simulation time.
 
-Python 3.11+, CUDA, and [Git LFS](https://git-lfs.com/) are required.
+## Project Structure
+
+```text
+OpenSim-Release/
+├── assets/                     # Paper overview image
+├── configs/
+│   ├── train.yaml              # Training and policy-validation settings
+│   ├── simulate.yaml           # Simulation settings
+│   └── evaluate.yaml           # Annotation and metric settings
+├── data/
+│   ├── DATASET_DISCLOSURE.md    # Dataset and evaluation disclosure
+│   ├── index.csv               # Event metadata and relative data paths
+│   ├── train/{macro,micro}/     # Training event files
+│   ├── test/{macro,micro}/      # Test event files
+│   └── figures/{train,test}/   # Event-level dataset visualizations
+├── opensim/
+│   ├── state_transition/       # Latent-state model and event datasets
+│   ├── policy/                 # Policy, trajectory critic, and generation
+│   ├── training/               # Data preparation, training, and validation
+│   ├── simulation/             # Population sampling and closed-loop rollout
+│   ├── evaluation/             # Deterministic, NLL, semantic, and metric stages
+│   ├── volume.py               # Causal interaction-volume forecaster
+│   ├── summarizer.py           # Communication-history summarization
+│   └── pipeline.py             # Workflow orchestration
+├── scripts/                    # Workflow entry points
+└── tests/                      # Focused regression tests
+```
+
+## Usage
+
+### 1. Environment and Data
+
+Requires Python 3.11+, CUDA, and [Git LFS](https://git-lfs.com/). Default model: **Qwen/Qwen3-1.7B**.
 
 ```bash
 git lfs install
@@ -30,28 +80,64 @@ source .venv/bin/activate
 python -m pip install -e .
 ```
 
-Data: [data/](data/) · [Dataset disclosure](data/DATASET_DISCLOSURE.md)
+See [dataset disclosure](data/DATASET_DISCLOSURE.md). Model weights are not included.
 
-Configs: [Train](configs/train.yaml) · [Simulate](configs/simulate.yaml) · [Evaluate](configs/evaluate.yaml)
-
-## Usage
+### 2. Inspect the Workflow
 
 ```bash
-# Preview
 python scripts/run.py --dry-run
+```
 
-# Train
+Configs: [Train](configs/train.yaml) · [Simulate](configs/simulate.yaml) · [Evaluate](configs/evaluate.yaml).
+
+### 3. Train
+
+```bash
 python scripts/train.py --base-model Qwen/Qwen3-1.7B --output-dir outputs
+```
 
-# Simulate
+### 4. Simulate
+
+Requires trained checkpoints and a passed validation gate.
+
+```bash
 python scripts/simulate.py --base-model Qwen/Qwen3-1.7B --output-dir outputs --resume
+```
 
-# Evaluate
+### 5. Evaluate
+
+Set `OPENAI_API_KEY` and optionally `OPENAI_BASE_URL`. Semantic evaluation may incur API charges.
+
+```bash
 python scripts/evaluate.py --base-model Qwen/Qwen3-1.7B --output-dir outputs --resume
 ```
 
-Simulation requires training checkpoints and a passed validation gate.
-Semantic evaluation requires `OPENAI_API_KEY` (optional `OPENAI_BASE_URL`) and may incur API charges.
+### 6. Full Runs, Individual Stages, and Resume
+
+```bash
+# Full workflow
+python scripts/run.py --base-model Qwen/Qwen3-1.7B --output-dir outputs
+
+# Preview one stage
+python scripts/evaluate.py --stage metrics --output-dir outputs --resume --dry-run
+```
+
+Keep model, configuration, and data settings unchanged when using `--resume`.
+Interrupted training requires a new output directory.
+
+### Using Existing Checkpoints
+
+Use `--checkpoint-root` with the following layout:
+
+```text
+checkpoints/
+├── state_transition/
+├── volume/
+├── policy_future/best_checkpoint/
+└── summarizer/best_checkpoint/
+```
+
+For simulation, also supply `--validation-gate` and the matching `--base-model`.
 
 ## License
 
