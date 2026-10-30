@@ -56,6 +56,11 @@
         </div>
       </header>
 
+      <figure class="paper-figure overview teaser" id="teaser">
+        <a class="figure-link" href="assets/teaser.pdf" aria-label="Open the full-resolution OpenSim teaser PDF"><img src="assets/teaser.png" width="2400" height="1281" alt="OpenSim models a platform process under declared external inputs. Participants change across activations while observable communication accumulates into a continuous event history." fetchpriority="high" decoding="async"></a>
+        <figcaption><strong>Event history continues as participants change.</strong> <a href="assets/teaser.pdf">Full-resolution figure ↗</a></figcaption>
+      </figure>
+
       <section class="video-section" id="video" aria-labelledby="video-heading">
         <h2 class="sr-only" id="video-heading">OpenSim project video</h2>
         <figure class="project-film">
@@ -67,12 +72,6 @@
           <figcaption id="video-caption"><strong>A 94-second concept demonstration.</strong> The users, posts, values, and trajectories shown are illustrative examples, not experimental results. <a href="assets/opensim-observatory.mp4" download>Download video (MP4) ↗</a></figcaption>
         </figure>
       </section>
-
-      <figure class="paper-figure overview" id="overview">
-        <div class="figure-label"><span>Framework overview</span><span>Participation → Communication → History</span></div>
-        <a class="figure-link" href="assets/overview.pdf" aria-label="Open the full-resolution OpenSim overview PDF"><img src="assets/overview.png" width="2400" height="1063" alt="OpenSim forecasts communication volume, activates participants, infers activation-local states, generates and selects communication, and updates the observable platform history." loading="lazy" decoding="async"></a>
-        <figcaption><strong>Overview of OpenSim.</strong> OpenSim recursively models participation, mean-field state transition, and future-constrained communication generation, with realized communication updating the collective state and platform history for subsequent steps. <a href="assets/overview.pdf">Full-resolution figure ↗</a></figcaption>
-      </figure>
 
       <section class="text-section" id="abstract" aria-labelledby="abstract-heading">
         <div class="section-heading"><p class="section-kicker">01 / Research context</p><h2 id="abstract-heading">Abstract</h2></div>
@@ -96,6 +95,11 @@
 
       <section class="text-section method-section" id="method" aria-labelledby="method-heading">
         <div class="section-heading"><p class="section-kicker">03 / Inside the framework</p><h2 id="method-heading">Method</h2></div>
+      <figure class="paper-figure overview" id="overview">
+        <div class="figure-label"><span>Framework overview</span><span>Participation → Communication → History</span></div>
+        <a class="figure-link" href="assets/overview.pdf" aria-label="Open the full-resolution OpenSim overview PDF"><img src="assets/overview.png" width="2400" height="1063" alt="OpenSim forecasts communication volume, activates participants, infers activation-local states, generates and selects communication, and updates the observable platform history." loading="lazy" decoding="async"></a>
+        <figcaption><strong>Overview of OpenSim.</strong> OpenSim recursively models participation, mean-field state transition, and future-constrained communication generation, with realized communication updating the collective state and platform history for subsequent steps. <a href="assets/overview.pdf">Full-resolution figure ↗</a></figcaption>
+      </figure>
         <dl class="method-caption-list">
           <div><dt>Open-population participation</dt><dd>Given prior platform history and declared environmental inputs, OpenSim forecasts communication volume and activates participants from a candidate pool. Participation is step-specific: users may enter, leave, and reappear, while history carries continuity. The manuscript distinguishes event-specific and external participant pools.</dd></div>
           <div><dt>Collective state and communication</dt><dd>A state-transition model predicts attitude composition and activation-local representations. A policy uses these predictions, participant features, and history to generate actions and content. Selected communications update the realized mean field and textual synopsis. Latent representations are not maintained through inactive periods.</dd></div>

@@ -292,3 +292,6 @@ h1 .title-tail { font-size: .65em; }
   .results-table { font-size: 10px; }
   .results-table th, .results-table td { padding: 6px; }
 }
+
+.teaser { margin-bottom: 48px; }
+.method-section .overview { margin-bottom: 28px; }
